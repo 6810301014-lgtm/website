@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แกลอรี่ Gallery - สายชล ยอยโพธิ์สัย</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            height: 250px;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img,
+        .gallery-placeholder {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-placeholder {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay button {
+            background: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 200;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            margin-top: 2.5%;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="site-title">🌟 My Portfolio</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <section>
+            <h2>📸 แกลอรี่</h2>
+            <p>รูปภาพจากโปรเจค กิจกรรม และเหตุการณ์ต่างๆ</p>
+        </section>
+
+        <!-- CATEGORY TABS -->
+        <section>
+            <h3>🏷️ หมวดหมู่รูปภาพ</h3>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <button class="btn" onclick="filterGallery('all')">ทั้งหมด</button>
+                <button class="btn" onclick="filterGallery('projects')">โปรเจค</button>
+                <button class="btn" onclick="filterGallery('events')">กิจกรรม</button>
+                <button class="btn" onclick="filterGallery('team')">ทีมงาน</button>
+                <button class="btn" onclick="filterGallery('personal')">ส่วนตัว</button>
+            </div>
+        </section>
+
+        <!-- GALLERY GRID -->
+        <div class="gallery-grid">
+            <!-- GALLERY ITEM 1 -->
+            <div class="gallery-item" data-category="projects">
+                <div class="gallery-placeholder">🖥️</div>
+                <div class="gallery-overlay">
+                    <button onclick="editImage(1)">✏️ แก้ไข</button>
+                    <button onclick="enlargeImage(1)">👁️ ดู</button>
+                </div>
+            </div>
+
+            <!-- GALLERY ITEM 2 -->
+            <div class="gallery-item" data-category="projects">
+                <div class="gallery-placeholder">📱</div>
+                <div class="gallery-overlay">
+                    <button onclick="editImage(2)">✏️ แก้ไข</button>
+                    <button onclick="enlargeImage(2)">👁️ ดู</button>
+                </div>
+            </div>
+
+            <!-- GALLERY ITEM 3 -->
+            <div class="gallery-item" data-category="projects">
+                <div class="gallery-placeholder">🎨</div>
+                <div class="gallery-overlay">
+                    <button onclick="editImage(3)">✏️ แก้ไข</button>
+                    <button onclick="enlargeImage(3)">👁️ ดู</button>
+                </div>
+            </div>
+
+            <!-- GALLERY ITEM 4 -->
+            <div class="gallery-item" data-category="events">
+                <div class="gallery-placeholder">🎉</div>
+                <div class="gallery-overlay">
+                    <button onclick="editImage(4)">✏️ แก้ไข</button>
+                    <button onclick="enlargeImage(4)">👁️ ดู</button>
+                </div>
+            </div>
+
+            <!-- GALLERY ITEM 5 -->
+            <div class="gallery-item" data-category="team">
+                <div class="gallery-placeholder">👥</div>
+                <div class="gallery-overlay">
+                    <button onclick="editImage(5)">✏️ แก้ไข</button>
+                    <button onclick="enlargeImage(5)">👁️ ดู</button>
+                </div>
+            </div>
+
+            <!-- GALLERY ITEM 6 -->
+            <div class="gallery-item" data-category="personal">
+                <div class="gallery-placeholder">🏖️</div>
+                <div class="gallery-overlay">
+                    <button onclick="editImage(6)">✏️ แก้ไข</button>
+                    <button onclick="enlargeImage(6)">👁️ ดู</button>
+                </div>
+            </div>
+
+            <!-- GALLERY ITEM 7 -->
+            <div class="gallery-item" data-category="projects">
+                <div class="gallery-placeholder">📊</div>
+                <div class="gallery-overlay">
+                    <button onclick="editImage(7)">✏️ แก้ไข</button>
+                    <button onclick="enlargeImage(7)">👁️ ดู</button>
+                </div>
+            </div>
+
+            <!-- GALLERY ITEM 8 -->
+            <div class="gallery-item" data-category="events">
+                <div class="gallery-placeholder">🎓</div>
+                <div class="gallery-overlay">
+                    <button onclick="editImage(8)">✏️ แก้ไข</button>
+                    <button onclick="enlargeImage(8)">👁️ ดู</button>
+                </div>
+            </div>
+
+            <!-- GALLERY ITEM 9 -->
+            <div class="gallery-item" data-category="team">
+                <div class="gallery-placeholder">🤝</div>
+                <div class="gallery-overlay">
+                    <button onclick="editImage(9)">✏️ แก้ไข</button>
+                    <button onclick="enlargeImage(9)">👁️ ดู</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL FOR ENLARGING IMAGES -->
+        <div id="imageModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="modalImage" alt="">
+        </div>
+
+        <!-- ADD PHOTO SECTION -->
+        <section>
+            <h2>📤 เพิ่มรูปภาพใหม่</h2>
+            <div class="card">
+                <h3>วิธีการเพิ่มรูปภาพ</h3>
+                <ol style="padding-left: 20px;">
+                    <li>สร้างโฟลเดอร์ "images" ในโปรเจคถ้ายังไม่มี</li>
+                    <li>วางรูปภาพในโฟลเดอร์นั้น</li>
+                    <li>เปิดไฟล์ gallery.html</li>
+                    <li>คัดลอก &lt;div class="gallery-item"&gt;...&lt;/div&gt;</li>
+                    <li>เปลี่ยน placeholder และเพิ่มรูปภาพ</li>
+                    <li>บันทึกและทดสอบ</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- STATS SECTION -->
+        <section class="text-center">
+            <h2>📈 สถิติแกลอรี่</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>9</h3>
+                    <p>รูปภาพทั้งหมด</p>
+                </div>
+                <div class="card">
+                    <h3>5</h3>
+                    <p>หมวดหมู่</p>
+                </div>
+                <div class="card">
+                    <h3>100%</h3>
+                    <p>แก้ไขได้</p>
+                </div>
+                <div class="card">
+                    <h3>∞</h3>
+                    <p>เพิ่มได้ไม่จำกัด</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 สายชล ยอยโพธิ์สัย - Personal Portfolio</p>
+        <div class="footer-links">
+            <a href="about.html">เกี่ยวกับ</a>
+            <a href="contact.html">ติดต่อ</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script>
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function editImage(id) {
+            const newImageUrl = prompt(`กรุณาใส่ URL รูปภาพใหม่ (รูปภาพที่ ${id}):`);
+            if (newImageUrl) {
+                const item = document.querySelectorAll('.gallery-item')[id - 1];
+                const placeholder = item.querySelector('.gallery-placeholder');
+                
+                const img = document.createElement('img');
+                img.src = newImageUrl;
+                img.alt = `ภาพที่ ${id}`;
+                
+                item.innerHTML = '';
+                item.appendChild(img);
+                item.appendChild(document.createElement('div')).className = 'gallery-overlay';
+                
+                item.querySelector('.gallery-overlay').innerHTML = `
+                    <button onclick="editImage(${id})">✏️ แก้ไข</button>
+                    <button onclick="enlargeImage(${id})">👁️ ดู</button>
+                `;
+                
+                alert(`✅ รูปภาพที่ ${id} ได้ถูกอัปเดตแล้ว`);
+            }
+        }
+
+        function enlargeImage(id) {
+            const items = document.querySelectorAll('.gallery-item');
+            const item = items[id - 1];
+            const img = item.querySelector('img');
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            
+            if (img) {
+                modalImg.src = img.src;
+                modal.style.display = 'block';
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+
+        // ปิด modal เมื่อคลิกนอกรูป
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

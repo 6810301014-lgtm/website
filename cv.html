@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV/Resume - สายชล ยอยโพธิ์สัย</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="site-title">🌟 My Portfolio</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- EDIT NOTICE -->
+        <section style="background-color: #fffacd; border-left: 4px solid #f39c12;">
+            <h3>📝 หมายเหตุ: คุณสามารถแก้ไขข้อมูล Resume ได้</h3>
+            <p>
+                ✏️ คลิกที่ข้อความใดๆ เพื่อแก้ไข (ข้อความที่สามารถแก้ไขได้จะมีสีเหลือง)<br>
+                💾 ข้อมูลของคุณจะถูกบันทึกใน browser โดยอัตโนมัติ<br>
+                🖨️ สามารถพิมพ์ resume ได้โดยใช้ Ctrl+P
+            </p>
+        </section>
+
+        <!-- PERSONAL INFO -->
+        <section class="resume-section">
+            <div style="display: flex; gap: 2rem; align-items: start;">
+                <div style="flex: 1;">
+                    <h2>
+                        <span id="resumeName" contenteditable="true">สายชล ยอยโพธิ์สัย</span>
+                    </h2>
+                    <h3>
+                        <span id="resumeTitle" contenteditable="true">นักศึกษาวิศวกรรมคอมพิวเตอร์</span>
+                    </h3>
+                    
+                    <div class="resume-item">
+                        <h4>📧 อีเมล</h4>
+                        <p><span id="resumeEmail" contenteditable="true">saichon.y@example.com</span></p>
+                    </div>
+
+                    <div class="resume-item">
+                        <h4>📱 โทรศัพท์</h4>
+                        <p><span id="resumePhone" contenteditable="true">092-253-3016</span></p>
+                    </div>
+
+                    <div class="resume-item">
+                        <h4>📍 ที่อยู่</h4>
+                        <p><span id="resumeLocation" contenteditable="true">142 หมู่ 13 ต.วังตะเคียน อ.หนองมะโมง จ.ชัยนาท 17120</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section class="resume-section">
+            <h2>🎓 การศึกษา</h2>
+            <div id="education"></div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="resume-section">
+            <h2>💻 ทักษะ</h2>
+            <div id="skills"></div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section class="resume-section">
+            <h2>💼 ประสบการณ์การทำงาน</h2>
+            <div id="experience"></div>
+        </section>
+
+        <!-- ADDITIONAL SECTIONS -->
+        <section class="resume-section">
+            <h2>📚 ความรู้เพิ่มเติม</h2>
+            <div class="resume-item">
+                <h4>💬 ภาษา</h4>
+                <p contenteditable="true">ไทย (ภาษาแม่), อังกฤษ (ระดับดี)</p>
+            </div>
+
+            <div class="resume-item">
+                <h4>🏆 ใบรับรอง</h4>
+                <p contenteditable="true">
+                    • ใบรับรอง PHP Developer - เสร็จสิ้น 2565<br>
+                    • ใบรับรอง Web Design - เสร็จสิ้น 2564<br>
+                    • ใบรับรอง Database Management - เสร็จสิ้น 2563
+                </p>
+            </div>
+
+            <div class="resume-item">
+                <h4>🛠️ เครื่องมือและเทคโนโลยี</h4>
+                <p contenteditable="true">
+                    IDE: VS Code, PHPStorm | 
+                    Database: MySQL, MongoDB | 
+                    Tools: Git, GitHub, Figma | 
+                    OS: Windows, Linux
+                </p>
+            </div>
+        </section>
+
+        <!-- ACTION BUTTONS -->
+        <section class="text-center">
+            <button class="btn" onclick="saveResume()">💾 บันทึก Resume</button>
+            <button class="btn btn-secondary" onclick="printResume()">🖨️ พิมพ์ Resume</button>
+            <button class="btn btn-success" onclick="downloadResume()">⬇️ ดาวน์โหลด (PDF)</button>
+        </section>
+
+        <!-- CV TIPS -->
+        <section>
+            <h2>💡 เคล็ดลับการแก้ไข CV</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>✏️ วิธีการแก้ไข</h3>
+                    <p>
+                        1. คลิกที่ข้อความที่ต้องการแก้ไข<br>
+                        2. ข้อความจะมีสีเหลืองเมื่อพร้อมแก้ไข<br>
+                        3. พิมพ์ข้อมูลใหม่<br>
+                        4. คลิกที่อื่นหรือกด Tab เพื่อบันทึก
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>💾 บันทึกข้อมูล</h3>
+                    <p>
+                        ข้อมูลจะถูกบันทึกโดยอัตโนมัติใน browser<br>
+                        คลิกปุ่ม "บันทึก Resume" เพื่อแน่ใจว่าบันทึกแล้ว<br>
+                        ข้อมูลจะยังคงอยู่แม้ปิดเบราว์เซอร์
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🖨️ พิมพ์และส่งออก</h3>
+                    <p>
+                        ใช้ Ctrl+P เพื่อพิมพ์<br>
+                        เลือก "บันทึกเป็น PDF"<br>
+                        ส่วนหัว/ส่วนท้ายจะถูกซ่อนโดยอัตโนมัติ
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🎨 การจัดรูปแบบ</h3>
+                    <p>
+                        หากต้องการเพิ่มข้อมูลเพิ่มเติม ให้คัดลอก resume-item<br>
+                        แก้ไขไฟล์ HTML โดยตรง<br>
+                        ใช้ HTML tags เบื้องต้น (เช่น &lt;strong&gt;, &lt;em&gt;)
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 สายชล ยอยโพธิ์สัย - Personal Portfolio</p>
+        <div class="footer-links">
+            <a href="about.html">เกี่ยวกับ</a>
+            <a href="contact.html">ติดต่อ</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script>
+        // บันทึกข้อมูล Resume เมื่อผู้ใช้แก้ไข
+        document.addEventListener('blur', function(e) {
+            if (e.target && e.target.contentEditable === 'true') {
+                localStorage.setItem('resumeLastUpdated', new Date().toLocaleString('th-TH'));
+            }
+        }, true);
+
+        function saveResume() {
+            const resumeText = document.body.innerText;
+            localStorage.setItem('resumeData', resumeText);
+            localStorage.setItem('resumeLastSaved', new Date().toLocaleString('th-TH'));
+            alert('✅ Resume ได้ถูกบันทึกแล้ว\nเวลา: ' + localStorage.getItem('resumeLastSaved'));
+        }
+
+        function printResume() {
+            window.print();
+        }
+
+        function downloadResume() {
+            const element = document.body;
+            const opt = {
+                margin: 10,
+                filename: 'Resume-' + document.getElementById('resumeName').innerText + '.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+            };
+            alert('💡 ใช้ Ctrl+P แล้วเลือก "บันทึกเป็น PDF" แทนการดาวน์โหลด');
+        }
+    </script>
+
+    <!-- CSS สำหรับการพิมพ์ -->
+    <style>
+        @media print {
+            header, footer, nav, .text-center, .grid, section:has(> h2:contains("เคล็ดลับ")) {
+                display: none;
+            }
+            
+            body {
+                background: white;
+            }
+            
+            [contenteditable="true"] {
+                background-color: white !important;
+            }
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ติดต่อ - สายชล ยอยโพธิ์สัย</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="site-title">🌟 My Portfolio</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <section>
+            <h2>📧 ติดต่อเรา</h2>
+            <p>มีคำถามหรือข้อเสนอแนะ? โปรดกรอกแบบฟอร์มด้านล่างและเราจะติดต่อกลับให้ในเร็วๆ นี้</p>
+        </section>
+
+        <div class="grid">
+            <!-- CONTACT FORM -->
+            <section>
+                <h3>📮 ส่งข้อความ</h3>
+                <form id="contactForm" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label for="name">ชื่อของคุณ *</label>
+                        <input type="text" id="name" name="name" required placeholder="กรุณาใส่ชื่อของคุณ">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">อีเมล *</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">เบอร์โทรศัพท์</label>
+                        <input type="tel" id="phone" name="phone" placeholder="081-234-5678">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">หัวข้อเรื่อง *</label>
+                        <input type="text" id="subject" name="subject" required placeholder="หัวข้อของข้อความ">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">ข้อความ *</label>
+                        <textarea id="message" name="message" required placeholder="กรุณากรอกข้อความของคุณ..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">✉️ ส่งข้อความ</button>
+                </form>
+            </section>
+
+            <!-- CONTACT INFO -->
+            <section>
+                <h3>📞 ข้อมูลติดต่อ</h3>
+                
+                <div class="card">
+                    <h4>📱 โทรศัพท์</h4>
+                    <p>
+                        <strong>มือถือ:</strong> 081-234-5678<br>
+                        <strong>บ้าน:</strong> 02-123-4567
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h4>📧 อีเมล</h4>
+                    <p>
+                        <strong>อีเมลหลัก:</strong> student@example.com<br>
+                        <strong>อีเมลมหาลัย:</strong> suriyuth@university.ac.th
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h4>📍 ที่อยู่</h4>
+                    <p>
+                        กรุงเทพมหานคร<br>
+                        ประเทศไทย
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h4>🔗 โซเชียลมีเดีย</h4>
+                    <p>
+                        <a href="#">Facebook</a> • 
+                        <a href="#">Instagram</a> • 
+                        <a href="#">GitHub</a> • 
+                        <a href="#">LinkedIn</a>
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h4>⏰ เวลาทำการ</h4>
+                    <p>
+                        จันทร์ - ศุกร์: 09:00 - 17:00<br>
+                        เสาร์ - อาทิตย์: ปิด
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- MAP SECTION (if needed) -->
+        <section>
+            <h2>🗺️ แผนที่ตำแหน่ง</h2>
+            <div style="background: linear-gradient(135deg, #3498db, #2c3e50); height: 300px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white;">
+                <p style="font-size: 1.5rem;">📍 แผนที่จะแสดงที่นี่</p>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section>
+            <h2>❓ คำถามที่พบบ่อย</h2>
+            <div class="card">
+                <h4>💬 ใช้เวลานานแค่ไหนในการตอบสนองต่อข้อความ?</h4>
+                <p>โดยทั่วไป เราจะตอบสนองภายใน 24-48 ชั่วโมง</p>
+            </div>
+
+            <div class="card">
+                <h4>💬 สามารถขอให้ทำโปรเจคได้ไหม?</h4>
+                <p>ได้ครับ เราสามารถหารือเรื่องโปรเจคใหม่ผ่านอีเมลหรือการพบปะ</p>
+            </div>
+
+            <div class="card">
+                <h4>💬 ค่าบริการคิดอย่างไร?</h4>
+                <p>ค่าบริการขึ้นอยู่กับประเภทและขนาดของโปรเจค ติดต่อมาเพื่อเจรจาราคา</p>
+            </div>
+
+            <div class="card">
+                <h4>💬 ทำงานรับจ้างได้ไหม?</h4>
+                <p>ได้ครับ เรายินดีสนทนาเรื่องงานและโครงการต่างๆ</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 สายชล ยอยโพธิ์สัย - Personal Portfolio</p>
+        <div class="footer-links">
+            <a href="about.html">เกี่ยวกับ</a>
+            <a href="contact.html">ติดต่อ</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // สร้าง mailto link
+            const mailtoLink = `mailto:saichon.y@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`ชื่อ: ${name}\nอีเมล: ${email}\nเบอร์โทร: ${phone}\n\nข้อความ:\n${message}`)}`;
+
+            // หรือแสดงข้อความสำเร็จ
+            alert(`✅ ขอบคุณครับ!\n\nข้อมูลของคุณ:\n- ชื่อ: ${name}\n- อีเมล: ${email}\n- หัวข้อ: ${subject}\n\nเราจะติดต่อกลับให้ในเร็วๆ นี้`);
+            
+            // บันทึกข้อมูลลง localStorage
+            const contactData = {
+                name: name,
+                email: email,
+                phone: phone,
+                subject: subject,
+                message: message,
+                timestamp: new Date().toLocaleString('th-TH')
+            };
+            
+            localStorage.setItem('lastContact', JSON.stringify(contactData));
+            
+            // รีเซ็ตฟอร์ม
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+</body>
+</html>
