@@ -2295,7 +2295,7 @@ Images: มีรูปภาพประกอบมากกว่า 3 รู
 
 Platform: GitHub Pages / Netlify
 
-Public URL: (ระบุคลาวด์ URL ของคุณ เช่น https://username.github.io/homework8)
+Public URL: https://6810301014-lgtm.github.io/website/
 
 Description: เว็บไซต์พอร์ตโฟลิโอส่วนตัว 8 หน้าของ นายสายชล ยอยโพธิ์สัย
 
