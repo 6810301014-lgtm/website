@@ -1,4 +1,4 @@
-# ☁️ วิธีการ Deploy ไปยัง Cloud
+﻿# ☁️ วิธีการ Deploy ไปยัง Cloud
 
 ## เลือกแพลตฟอร์ม Cloud
 

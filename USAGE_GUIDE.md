@@ -1,4 +1,4 @@
-# 📖 คู่มือการใช้งาน (Usage Guide)
+﻿# 📖 คู่มือการใช้งาน (Usage Guide)
 
 ## 🎯 เริ่มต้นใช้งาน Personal Portfolio
 
